@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Laboratório 3D Produtos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <img src="logo_gloria.png" alt="logo_gloria">
+    <h1 class="large-title">..................................................................Laboratório 3D Produtos.....................................................................</h1>
+    <img src="logo_lab.png" alt="logo_lab" style="width: 10px;">
+  </header>
+
+  <div class="container">
+    <div class="triangle-up"></div>
+    <div class="triangle-down"></div>
+    <div class="triangle-right"></div>
+    <div class="arrow"></div>
+  </div>
+
+  <main>
+    <div class="product-card">
+      <img src="product1.png.png" alt="Produto 1">
+      <h2>Produto 1</h2>
+      <p>Descrição do Produto 1</p>
+      <span class="price">R$ 40,00</span>
+      <button onclick="addToCart('Produto 1', 50)">Adicionar ao Carrinho</button>
+    </div>
+    <div class="product-card">
+      <img src="product2.jpg" alt="Produto 2">
+      <h2>Produto 2</h2>
+      <p>Descrição do Produto 2</p>
+      <span class="price">R$ 35,00</span>
+      <button onclick="addToCart('Produto 2', 35)">Adicionar ao Carrinho</button>
+    </div>
+    <!-- Adicione mais produtos aqui -->
+  </main>
+
+  <div>
+    <form action="codigoDeBarras.php" method="post">
+      <label for="codigo">Código de Barras:</label>
+      <input type="text" name="codigo" id="codigo" maxlength="30" required>
+      <input type="submit" value="Gerar">
+      <div class="barcode">
+        <!-- Aqui você pode adicionar a sequência numérica do código de barras -->
+        <div class="020000300"></div>
+        <div class="010000200"></div>
+      </div>
+    </form>
+  </div>
+
+  <br></br>
+  <br></br>
+  <br></br>
+  <footer>
+    <p>Endereço: Rua Avenida Paraná, 2265 - Boa Vista, Curitiba - PR, 82510-000</p>
+    <p>Contato: (41) 99954-6645</p>
+    <p>&copy; 2023 Laboratório3DProdutos. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
