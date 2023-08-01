@@ -35,6 +35,17 @@ img {
   border: 1px solid #000;
   overflow: hidden;
 }
+.barcode-image {
+  width: 50%;
+  background-color: black;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  overflow: visible;
+}
 
 .bar {
   height: 100%;
