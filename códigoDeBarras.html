@@ -26,7 +26,15 @@
     <div class="product-card">
       <img src="product1.png.png" alt="Produto 1">
       <h2>Produto 1</h2>
-      <p>Descrição do Produto 1</p>
+      <p>Descrição do Produto 1
+        - Acabamento do Jeep Compass
+        - Peça fabricada em 30 minutos.
+        - Material: ABS
+        - Tamanho: 1.5x1.5x1.5
+        - Peso: 0.5g
+        - código do produto: 10A
+        - Preço: R$ 40,00 conjunto com 2 peças
+      </p>
       <span class="price">R$ 40,00</span>
       <button onclick="addToCart('Produto 1', 50)">Adicionar ao Carrinho</button>
     </div>
@@ -44,18 +52,34 @@
     <form onsubmit="gerarCodigoDeBarras(); return true;" action="codigoDeBarras.php" method="post">
       <label for="codigo">Código de Barras:</label>
       <input type="text" name="codigo" id="codigo" maxlength="9" required>
-      <input type="submit" value="Gerar">
-      <button onclick="enviado('Código de Barras 1', 10202308102223)">Gerar</button>
-      <label>
-        <input type="radio" name="codigo" value="1020230810223" required>
-        (1020230810223)</label>
-      <label>
-        <input type="" name="codigo" value="1020230810117" required>
-        (1020230810117)</label>
-
     </form>
   </div>
+  <h1>Geração de Código de Produto</h1>
 
+  <label for="numeroProduto">Digite o número do produto:</label>
+  <input type="text" id="numeroProduto" placeholder="Número do Produto" maxlength="15">
+  <button onclick="gerarCodigo()">Gerar Código</button>
+
+  <p>Código do Produto: <span id="codigoProduto"></span></p>
+  <script>
+    function gerarCodigo() {
+      var numeroProduto = parseInt(document.getElementById("numeroProduto").value);
+      if (numeroProduto >= 1 && numeroProduto <= 17) {
+        var codigoProduto = numeroProduto + "101" + "2023L";
+        document.getElementById("codigoProduto").innerHTML = codigoProduto + " - seu produto foi adicionado ao carrinho.";
+      } else {
+        document.getElementById("codigoProduto").innerHTML = numeroProduto + " não está entre 1 e 17.";
+        alert("O número do produto deve estar entre 1 e 17." + "ERROR 4");
+        document.getElementById("barcodeImage").src = ""; // Limpa a imagem se o número estiver fora do intervalo
+      }
+    }
+    if (numeroProduto == 1) {
+      Image.src = "barcode1.png"; style = "width: 5000px";
+    }
+    if (numeroProduto == 2) {
+      Image.src = "barcode2.png"; style = "width: 5000px";
+    }
+  </script>
   <img src="CODEe13.2.png" style="width: 50px;"> <!-- Aqui você pode adicionar a imagem do código de barras -->
   </div>
   <br></br>
